@@ -1,3 +1,16 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build output
+dist
+dist-ssr
+build/
+.bolt/
+
+# Logs
 logs
 *.log
 npm-debug.log*
@@ -6,20 +19,31 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-.bolt/
+# Environment variables
+.env
+.env.local
+.env.*.local
 *.local
-*.env.local
 
+# IDE and editor files
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-.env
+*.iml
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Testing
+coverage/
+.nyc_output/
+
+# Production
+out/
