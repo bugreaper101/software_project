@@ -25,6 +25,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - White screen issue by implementing Supabase client fallback for missing environment variables
 - GitHub authentication setup and initial repository configuration
 
+## [1.0.0] - 2026-08-10
+
+### Added
+- Release version `1.0.0` with initial stable deployment tag
+- Version tag `v1.0.0` created to represent the current stable release
+
 ## [0.0.1] - 2026-08-10
 
 ### Added
