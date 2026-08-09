@@ -17,7 +17,6 @@ function createStubQuery() {
     delete: () => stub,
     upsert: () => stub,
     limit: () => stub,
-    order: () => stub,
     then: (onFulfilled: any) => Promise.resolve({ data: null, error: { message: missingConfigMessage } }).then(onFulfilled),
     catch: (onRejected: any) => Promise.resolve({ data: null, error: { message: missingConfigMessage } }).catch(onRejected),
   };

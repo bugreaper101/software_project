@@ -72,7 +72,7 @@ export function useGuestMemoryMedia(testimonialId: string | null) {
       .select('*')
       .eq('testimonial_id', testimonialId)
       .order('sort_order', { ascending: true })
-      .then(({ data }) => {
+      .then(({ data }: { data: any }) => {
         setMedia((data ?? []) as GuestMemoryMedia[]);
         setLoading(false);
       });
@@ -179,13 +179,13 @@ export function useAdminAllTestimonials() {
     for (const g of guest) {
       updates.push(
         Promise.resolve(supabase.from('guest_testimonials').update({ sort_order: g.sort_order }).eq('id', g.id)
-          .then(({ error }) => ({ error: error ? { message: error.message } : null }))),
+          .then(({ error }: { error: any }) => ({ error: error ? { message: error.message } : null }))),
       );
     }
     for (const c of curated) {
       updates.push(
         Promise.resolve(supabase.from('testimonials').update({ sort_order: c.sort_order }).eq('id', c.id)
-          .then(({ error }) => ({ error: error ? { message: error.message } : null }))),
+          .then(({ error }: { error: any }) => ({ error: error ? { message: error.message } : null }))),
       );
     }
     const results = await Promise.all(updates);
