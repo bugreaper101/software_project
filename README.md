@@ -14,12 +14,14 @@ This project is designed to present a restaurant brand with a dynamic homepage, 
 
 ## Tech Stack
 
-- React 18
-- TypeScript
-- Vite
-- Tailwind CSS
-- Supabase
-- ESLint
+Our technology choices:
+- React 18 for component-based UI
+- TypeScript for type safety
+- Vite for fast build and dev server
+- Tailwind CSS for responsive styling
+- Supabase for backend services
+- ESLint for code linting
+- Jest for testing
 
 ## Project Setup
 
