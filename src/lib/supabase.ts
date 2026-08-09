@@ -10,15 +10,15 @@ function createStubQuery() {
     select: () => stub,
     eq: () => stub,
     order: () => stub,
-    maybeSingle: () => Promise.resolve({ data: null, error: { message: missingConfigMessage } }),
-    single: () => Promise.resolve({ data: null, error: { message: missingConfigMessage } }),
+    maybeSingle: () => Promise.resolve({ data: null, error: null }),
+    single: () => Promise.resolve({ data: null, error: null }),
     insert: () => stub,
     update: () => stub,
     delete: () => stub,
     upsert: () => stub,
     limit: () => stub,
-    then: (onFulfilled: any) => Promise.resolve({ data: null, error: { message: missingConfigMessage } }).then(onFulfilled),
-    catch: (onRejected: any) => Promise.resolve({ data: null, error: { message: missingConfigMessage } }).catch(onRejected),
+    then: (onFulfilled: any) => Promise.resolve({ data: null, error: null }).then(onFulfilled),
+    catch: (onRejected: any) => Promise.resolve({ data: null, error: null }).catch(onRejected),
   };
   return stub;
 }
