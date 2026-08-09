@@ -14,14 +14,20 @@ This project is designed to present a restaurant brand with a dynamic homepage, 
 
 ## Tech Stack
 
-Our technology choices:
-- React 18 for component-based UI
-- TypeScript for type safety
-- Vite for fast build and dev server
-- Tailwind CSS for responsive styling
-- Supabase for backend services
-- ESLint for code linting
-- Jest for testing
+### Frontend Technologies
+- **React 18.3.1** — Component-based UI framework with TypeScript for type safety
+- **Vite 5.4.8** — Lightning-fast build tool and dev server
+- **Tailwind CSS 3.4.1** — Utility-first CSS framework for responsive styling
+- **Lucide React** — Beautiful, consistent icon library
+
+### Backend Services
+- **Supabase PostgreSQL Database** — Scalable relational database for content storage
+- **Supabase Authentication Service** — User management and role-based access control
+
+### Development Tools & Quality Assurance
+- **TypeScript** — Strict type checking for safer code
+- **ESLint** — Automated code quality and style checking
+- **Jest** — Unit testing framework for component testing
 
 ## Project Setup
 
