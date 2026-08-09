@@ -14,12 +14,19 @@ This project is designed to present a restaurant brand with a dynamic homepage, 
 
 ## Tech Stack
 
-- React 18
-- TypeScript
-- Vite
-- Tailwind CSS
-- Supabase
-- ESLint
+### Frontend
+- React 18.3.1 with TypeScript
+- Vite 5.4.8 (build tool and dev server)
+- Tailwind CSS 3.4.1 (utility-first styling)
+- Lucide React (icon library)
+
+### Backend
+- Supabase PostgreSQL database
+- Supabase Authentication service
+
+### Development Tools
+- ESLint for code quality
+- TypeScript strict mode
 
 ## Project Setup
 
