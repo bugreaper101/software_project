@@ -9,7 +9,9 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+.bolt/
 *.local
+*.env.local
 
 .vscode/*
 !.vscode/extensions.json
