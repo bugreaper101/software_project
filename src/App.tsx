@@ -23,7 +23,7 @@ export type Route =
 function AppShell() {
   const [route, setRoute] = useState<Route>({ name: 'home' });
   const [reservationOpen, setReservationOpen] = useState(false);
-  const { settings } = useSiteData();
+  const { settings, loading: dataLoading } = useSiteData();
 
   // Scroll to top on route change
   useEffect(() => {
@@ -33,6 +33,20 @@ function AppShell() {
   const openReservation = () => setReservationOpen(true);
 
   const showChrome = route.name !== 'auth';
+
+  // Show loading state while data loads
+  if (dataLoading) {
+    return (
+      <div className="min-h-screen bg-ink-950 text-cream-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-flex items-center justify-center mb-4">
+            <div className="w-8 h-8 border-2 border-gold-500 border-t-transparent rounded-full animate-spin"></div>
+          </div>
+          <p className="text-cream-300">Loading Lumière...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-ink-950 text-cream-100">
