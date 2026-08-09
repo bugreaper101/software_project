@@ -115,3 +115,7 @@ git push origin <branch-name>
 
 If you want to switch this project to SSH authentication for GitHub, update the remote URL to an SSH URL and configure your SSH keys.
 
+
+## Branch Note
+This branch focuses on homepage UI improvements.
+
