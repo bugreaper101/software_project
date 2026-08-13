@@ -31,7 +31,11 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>(options?: {
       { threshold, rootMargin },
     );
     observer.observe(el);
-    return () => observer.disconnect();
+    const fallback = window.setTimeout(() => setVisible(true), 1200);
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(fallback);
+    };
   }, [threshold, rootMargin, once]);
 
   return { ref, visible };

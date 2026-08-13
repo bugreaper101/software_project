@@ -41,7 +41,15 @@ export function useSiteData(): SiteData {
     setLoading(true);
     setError(null);
     try {
-      const [settingsRes, catRes, itemsRes, imagesRes, eventsRes, galleryRes, testRes, guestTestRes] = await Promise.all([
+      const withTimeout = <T,>(promise: Promise<T>, ms = 8000) =>
+        Promise.race([
+          promise,
+          new Promise<T>((_, reject) => {
+            window.setTimeout(() => reject(new Error('Content request timed out.')), ms);
+          }),
+        ]);
+
+      const [settingsRes, catRes, itemsRes, imagesRes, eventsRes, galleryRes, testRes, guestTestRes] = await withTimeout(Promise.all([
         supabase.from('restaurant_settings').select('*').eq('id', 1).maybeSingle(),
         supabase.from('menu_categories').select('*').order('sort_order', { ascending: true }),
         supabase.from('menu_items').select('*').order('sort_order', { ascending: true }),
@@ -50,7 +58,7 @@ export function useSiteData(): SiteData {
         supabase.from('gallery').select('*').order('sort_order', { ascending: true }),
         supabase.from('testimonials').select('*').order('sort_order', { ascending: true }),
         supabase.from('guest_testimonials').select('*').eq('status', 'approved').order('sort_order', { ascending: true }),
-      ]);
+      ]));
 
       if (settingsRes.error) throw settingsRes.error;
       if (catRes.error) throw catRes.error;
